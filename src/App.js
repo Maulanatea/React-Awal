@@ -12,16 +12,16 @@ function App() {
 
   }
   const onDeleteProduct = (id) => {
-    const deleteProduct = products.filter((prod)=>{
+    const updatedProduct = products.filter((prod)=>{
       return prod.id != id
     })
-    setProducts(deleteProduct) 
+    setProducts(updatedProduct) 
   }
   return (
     <>
       <div className='app-title'>List Produk</div>
       <ProductCreate onCreateProduct={onCreateProduct} />
-      <ProductList products={products} />
+      <ProductList products={products} onDeleteProduct={onDeleteProduct}/>
 
     </>
   );

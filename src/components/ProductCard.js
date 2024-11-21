@@ -4,22 +4,26 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 
-const ProductCard = (props) => {
+const ProductCard = ({product, onDeleteProduct}) => {
+  const { id, nama, deskripsi, imageURL } = product
   const [jumlahProduct, setJumlahProduct] = useState(0)
+  const handleDelete = () => {
+    onDeleteProduct(id)
+  }
   return (
     <div className='card'>
       <div>
         <BorderColorIcon className='icon-edit'/>
-        <DeleteForeverIcon className='icon-delete'/>
+        <DeleteForeverIcon onClick={handleDelete} className='icon-delete'/>
       </div>
       <img style={{ width: '100%', height: '200px', borderRadius: '10px 10px 0px 0px' }}
-        src={props.imageURL}
+        src={imageURL}
         alt=""
       />
 
       <div className='container'>
-        <h4><b>{props.nama}</b></h4>
-        <p>{props.deskripsi}</p>
+        <h4><b>{nama}</b></h4>
+        <p>{deskripsi}</p>
       </div>
       <div className={`card-keranjang ${jumlahProduct > 0 ? 'jumlah-product' : 'show-keranjang'} `}>
         {jumlahProduct > 0 ? (<>

@@ -95,14 +95,13 @@
   }
   .edit-input-cancel {
     padding: 10px;
-  
     border-radius: 4px;
-    border: none;
+    border: 1px solid rgba(32, 191, 107, 1);
     width: 80px;
     height: 36px;
-    color: white;
+    color: rgba(32, 191, 107, 1);
     cursor: pointer;
-    background: rgba(251, 129, 129, 1);
+    background: rgba(255, 255, 255, 1);
     position: absolute;
     bottom: 30px;
     right: 120px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, onDeleteProduct }) => {
   
   return (
     <>
@@ -9,9 +9,8 @@ const ProductList = ({ products }) => {
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            nama={product.nama}
-            deskripsi={product.deskripsi}
-            imageURL={product.imageURL}
+            product={product}
+            onDeleteProduct={onDeleteProduct}
           />
         ))}
       </div>
